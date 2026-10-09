@@ -44,7 +44,13 @@ flowchart LR
 
 ### 分工
 
-這是 4 人小組的畢業專題（呂奕萱、邱怡清、曾苔湘、陳宥蓉）。依小組 Notion 分工表：呂奕萱、邱怡清負責文獻閱讀與模型訓練，全員共同撰寫報告。程式碼為小組共同成果，整理自小組的 Notion 紀錄。
+這是 4 人小組的畢業專題（呂奕萱、邱怡清、曾苔湘、陳宥蓉），程式碼為小組共同成果，整理自小組的 Notion 紀錄。
+
+| 成員 | 負責 |
+|---|---|
+| 曾苔湘（我） | 機械手臂的程式控制：PCA9685 舵機驅動、影像座標＋深度 → 舵機角度的查表與等差公式、夾取／歸位動作流程 |
+| 呂奕萱、邱怡清 | 文獻閱讀、YOLO 模型訓練與調參 |
+| 全員 | 專題報告撰寫 |
 
 ### 執行方式（Jetson Nano）
 
@@ -92,7 +98,7 @@ A strawberry-harvesting system built around an NVIDIA Jetson Nano. A RealSense d
 
 ### Team
 
-Four-person capstone project (呂奕萱, 邱怡清, 曾苔湘 (Tai-Hsiang Tseng), 陳宥蓉). Per the team's task sheet, 呂奕萱 and 邱怡清 handled literature review and model training and all members wrote the reports. The code is the team's shared work, collected from the team's Notion workspace.
+Four-person capstone project (呂奕萱, 邱怡清, 曾苔湘 (Tai-Hsiang Tseng), 陳宥蓉). I (曾苔湘) was responsible for the robot-arm control code: PCA9685 servo driving, the image-coordinate + depth → servo-angle lookup and step formula, and the grab/return sequence. 呂奕萱 and 邱怡清 handled literature review and YOLO training; all members wrote the reports. The code is the team's shared work, collected from the team's Notion workspace.
 
 ### Run (on Jetson Nano)
 
