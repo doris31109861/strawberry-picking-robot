@@ -1,0 +1,12 @@
+# 模型權重、資料集與影片不上傳
+*.weights
+*.pt
+*.onnx
+*.engine
+*.MOV
+*.mov
+*.mp4
+datasets/
+__pycache__/
+*.pyc
+.env

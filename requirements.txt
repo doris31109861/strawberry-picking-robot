@@ -1,0 +1,7 @@
+# Jetson Nano（JetPack 4.6, Python 3.6）上使用的套件
+# OpenCV 需為有 CUDA 支援的版本（Jetson 上通常需自行編譯，pip 版沒有 CUDA DNN 後端）
+opencv-python
+numpy
+pillow
+smbus          # PCA9685 的 I2C 通訊
+# pyrealsense2 請依 Intel librealsense 官方說明在 Jetson 上編譯安裝
