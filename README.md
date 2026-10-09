@@ -4,6 +4,9 @@
 
 [中文](#中文) | [English](#english)
 
+> 2026/10 以 AI（Claude）協助整理、測試與改進，逐項紀錄見 [CHANGELOG](CHANGELOG.md)。
+> Organized, tested and improved with AI assistance (Claude) in October 2026; see the [CHANGELOG](CHANGELOG.md) for every change.
+
 ![機械手臂夾取草莓並放入盒中 / Arm picking a strawberry](docs/demo.gif)
 
 **Demo 影片 / Video:** [完整採草莓影片（GitHub Release）](https://github.com/doris31109861/strawberry-picking-robot/releases/tag/demo-video)
