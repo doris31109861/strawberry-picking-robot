@@ -27,9 +27,9 @@ flowchart LR
 ### 技術重點
 
 - **邊緣裝置部署**：YOLOv5 + PyTorch 在 Jetson Nano 上有 CUDA 相容問題，改用 YOLOv4-tiny 搭配 OpenCV DNN 的 CUDA FP16 後端
-- **成熟度辨識**：Flower / Ripe / Unripe / Rotten / Badly-shaped；自行重新標註 604 張資料，mAP 由 53% 提升到 73%，只偵測成熟果時達 88%
+- **成熟度辨識**：Flower / Ripe / Unripe / Rotten / Badly-shaped；小組重新標註 604 張資料（模型訓練由呂奕萱、邱怡清負責），mAP 由 53% 提升到 73%，只偵測成熟果時達 88%
 - **手眼協調**：把畫面切成 30 px 的格子逐點量測舵機角度，發現同一 (x, y) 隨深度變化呈等差數列，以「查表＋等差」取代難以擬合的逆運動學公式
-- **畫面邊緣讀不到深度**時，手臂先轉向目標方向再重新偵測
+- **畫面邊緣讀不到深度**時的處理：原設計是先轉向目標再重新偵測；最終版程式實際上會轉向後收回並結束（詳見 CHANGELOG）
 
 ### 模型結果
 
@@ -92,9 +92,9 @@ A strawberry-harvesting system built around an NVIDIA Jetson Nano. A RealSense d
 ### Highlights
 
 - **Edge deployment**: YOLOv5 + PyTorch had CUDA compatibility problems on the Jetson Nano, so the team deployed YOLOv4-tiny through OpenCV DNN with the CUDA FP16 backend.
-- **Ripeness detection**: Flower / Ripe / Unripe / Rotten / Badly-shaped. Relabelling 604 images raised mAP from 53% to 73%; ripe-only detection reached 88%.
+- **Ripeness detection**: Flower / Ripe / Unripe / Rotten / Badly-shaped. The team's relabelling of 604 images (model training by 呂奕萱 and 邱怡清) raised mAP from 53% to 73%; ripe-only detection reached 88%.
 - **Hand–eye calibration**: the 640×480 frame is split into 30-px cells and servo angles were measured per cell. For a fixed (x, y), the angles of servos 2 and 4 change as an arithmetic sequence with depth, so a lookup table plus a per-cell step replaces hard-to-fit inverse kinematics.
-- When a berry sits at the image edge with no valid depth, the arm first turns toward it and re-detects.
+- Berries at the image edge often have no valid depth. The design was to turn toward the berry and re-detect; in the final program the arm turns, returns home and stops (see CHANGELOG).
 
 ### Results
 
