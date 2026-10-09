@@ -1,0 +1,14 @@
+# 手臂控制的單元測試（純 Python，不需要硬體）
+name: test
+
+on: [push, workflow_dispatch]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python tests/test_arm_control.py

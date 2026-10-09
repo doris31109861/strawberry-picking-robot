@@ -87,6 +87,8 @@ v3 = 10 * (array[x][y][1] - array[x][y][3] * (z - 20))
 
 | 檔案 | 說明 |
 |---|---|
-| `src/strawberry_picker.py` | 最終整合版（Notion 上的「Ruby改」）：偵測 → 深度 → 查表 → 舵機採摘 |
+| `src/strawberry_picker.py` | 最終整合版（Notion 附件 one_OK_change.py）：偵測 → 深度 → 查表 → 舵機採摘 |
+| `src/arm_control.py` | 手臂控制（查表、座標＋深度→脈寬、PCA9685），整理自 angle_code.py 與主程式 |
+| `tools/angle_calculator.py` | 校正用的角度計算工具（Notion 附件 angle_code.py） |
 | `src/ui.py` | tkinter 操作介面（UIV2） |
 | `src/detect_image.py` | 單張圖片的 YOLOv4-tiny 測試程式 |

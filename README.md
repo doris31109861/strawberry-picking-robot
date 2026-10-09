@@ -63,12 +63,21 @@ python3 ui.py                        # 操作介面（可從介面啟動採摘�
 python3 strawberry_picker.py         # 直接執行偵測 + 採摘
 ```
 
-模型權重與資料集沒有放在 repo 中。
+**模型檔案**：訓練好的 `yolov4-tiny.weights`、`.cfg` 與 `classes.txt` 沒有留存（小組 Notion 上只有 YOLOv5 的 `best.pt`），
+所以目前無法直接重現偵測部分；主程式找不到 `classes.txt` 時會提示。手臂控制的部分不需要模型，可以單獨測試：
+
+```bash
+python tests/test_arm_control.py     # 單元測試（不需硬體），GitHub Actions 每次 push 自動執行
+python tools/angle_calculator.py     # 輸入格子座標與深度，算出三個舵機的脈寬
+```
 
 ### 專案結構
 
 ```
-src/strawberry_picker.py   # 整合主程式：偵測 → 深度 → 舵機角度 → 採摘
+src/strawberry_picker.py   # 整合主程式：偵測 → 深度 → 舵機角度 → 採摘（最終版 one_OK_change.py）
+src/arm_control.py         # 手臂控制：校正查表、座標＋深度 → 舵機脈寬、PCA9685 驅動、收回動作
+tools/angle_calculator.py  # 校正用小工具：輸入 x、y、z 算出舵機脈寬
+tests/test_arm_control.py  # 手臂控制單元測試
 src/ui.py                  # tkinter 操作介面
 src/detect_image.py        # 單張圖片偵測
 docs/notion.md             # 專題 Notion 紀錄整理（硬體、資料集、實驗數據、手臂校正方法）
@@ -102,4 +111,4 @@ Four-person capstone project (呂奕萱, 邱怡清, 曾苔湘 (Tai-Hsiang Tseng)
 
 ### Run (on Jetson Nano)
 
-Install the requirements, put the trained `yolov4-tiny.weights`, `yolov4-tiny.cfg` and `classes.txt` into `src/`, then run `python3 ui.py` (GUI) or `python3 strawberry_picker.py`. Model weights and datasets are not included.
+Install the requirements, put the trained `yolov4-tiny.weights`, `yolov4-tiny.cfg` and `classes.txt` into `src/`, then run `python3 ui.py` (GUI) or `python3 strawberry_picker.py`. The trained YOLOv4-tiny files were not kept, so detection cannot be reproduced as-is. The arm-control code (`src/arm_control.py`) needs no model or hardware: `python tests/test_arm_control.py` runs its unit tests (also in CI) and `python tools/angle_calculator.py` converts a grid cell and depth into servo pulses.
