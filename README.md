@@ -4,7 +4,9 @@
 
 [中文](#中文) | [English](#english)
 
-**Demo 影片 / Video:** [採草莓影片（GitHub Release）](https://github.com/doris31109861/strawberry-picking-robot/releases/tag/demo-video)
+![機械手臂夾取草莓並放入盒中 / Arm picking a strawberry](docs/demo.gif)
+
+**Demo 影片 / Video:** [完整採草莓影片（GitHub Release）](https://github.com/doris31109861/strawberry-picking-robot/releases/tag/demo-video)
 
 ---
 

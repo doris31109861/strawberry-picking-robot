@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-09 — README 加入採摘 GIF
+
+- **內容**：從專題影片的「細節回放」片段擷取約 6 秒（1.5 倍速），做成 `docs/demo.gif`（480px、約 2.3MB），放在 README 開頭；完整影片仍在 GitHub Release。
+- **原因**：README 一打開就能看到手臂實際夾取草莓。
+- **測試**：逐格確認畫面從夾取開始到草莓放入盒中。
+
 ## 2026-10-09 — 建立 repo
 
 - **內容**：從小組 Notion 紀錄整理出最終整合程式（`src/strawberry_picker.py`）、操作介面（`src/ui.py`）、單張偵測（`src/detect_image.py`），補上中文註解；`docs/notion.md` 整理硬體、資料集、YOLOv4-tiny / YOLOv8 實驗數據與手臂校正方法；中英雙語 README；demo 影片放在 GitHub Release。
